@@ -6,7 +6,7 @@ window.GeneratePdf = (function () {
 
   var config =  {
     card: [ 3.75, 2.25 ],
-    margin: 0.35,
+    margin: 0.1,
     trim: 0.125
   };
 

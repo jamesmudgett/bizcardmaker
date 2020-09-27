@@ -42,19 +42,19 @@
 
     .card-content {
 
-      .card-picture {
-        position: absolute;
-        top: 20%;
-        left: 4%;
+      // .card-picture {
+      //   position: absolute;
+      //   bottom: 2%;
+      //   left: 2%;
 
-        label {
-          color: #fff !important;
-        }
+      //   label {
+      //     color: #fff !important;
+      //   }
 
-        .drag-handle {
-          border-color: #fff !important;
-        }
-      }
+      //   .drag-handle {
+      //     border-color: #fff !important;
+      //   }
+      // }
 
       .card-item,
       .card-item p {
@@ -63,59 +63,30 @@
 
       .card-item {
         position: absolute;
-        left: 58%;
-      }
-
-
-      .person,
-      .details,
-      .email,
-      .url {
-        position: absolute;
-
-        width: auto;
-      }
-
-      .person {
-        top: 8%;
-
-        font-size: emCalc(24);
-        letter-spacing: -1px;
-
-        p {
-          line-height: 1.2em;
-
-          &:last-child {
-            font-size: .8em;
-          }
+    
+        &.person {
+          top: 2%;
+          left: 2%;
         }
-      }
-
-      .details {
-        top: 52%;
-
-        font-size: emCalc(14);
-
-        p {
-          line-height: 1.2em;
+    
+        &.email {
+          top: 2%;
+          right: 2%;
+          text-align: right;
         }
-      }
-
-      .email {
-        top: 80%;
-      }
-
-      .url {
-        top: 88%;
-      }
-
-      .email,
-      .url {
-        font-size: emCalc(14);
-
-        p {
-          line-height: 1em;
+    
+        &.url {
+          top: 10%;
+          right: 2%;
+          text-align: right;
         }
+    
+        &.details {
+          display: none;
+          bottom: 2%;
+          right: 2%;
+        }
+    
       }
 
     }
@@ -165,7 +136,7 @@
 
   .theme-picture--#{$picture}-#{$name}-thumb {
 
-    @include theme-new();
+    // @include theme-new();
 
     .theme-preview {
       position: relative;
@@ -227,61 +198,50 @@
 /* generate themes
  */
 
-/* old winter themes
- * TODO delete once nobody wants them
- */
-@include picture('half', false, 'winter');
-@include picture('half-black', true, 'winter');
-@include picture('top', false, 'winter');
-@include picture('top-black', true, 'winter');
-
-@include picture('half', false, 'winter2');
-@include picture('half-black', true, 'winter2');
-@include picture('top', false, 'winter2');
-@include picture('top-black', true, 'winter2');
-
-@include picture('half', false, 'winter3');
-@include picture('half-black', true, 'winter3');
-@include picture('top', false, 'winter3');
-@include picture('top-black', true, 'winter3');
-
-/* space theme
- */
-
-@include picture('full', true, 'space');
-@include picture('half', false, 'space');
-@include picture('half-black', true, 'space');
-@include picture('top', false, 'space');
-@include picture('top-black', true, 'space');
-
-/* city theme
- */
-
-@include picture('half', false, 'city');
-@include picture('half-black', true, 'city');
-@include picture('top', false, 'city');
-@include picture('top-black', true, 'city');
-
-/* stardust
- * http://subtlepatterns.com/stardust/
- */
-
-@include picture('full', true, 'stardust', true, 'png');
-
-/* food
- * http://subtlepatterns.com/food/
- */
-
-@include picture('full', false, 'food', true, 'png');
-
-/* school
- * http://subtlepatterns.com/school/
- */
-
-@include picture('full', false, 'school', true, 'png');
-
-/* restaurant
- * http://subtlepatterns.com/restaurant-2/
- */
-
-@include picture('full', true, 'restaurant', true, 'png');
+@include picture('full', true, 'blacklight');
+@include picture('full', true, 'bluelight');
+@include picture('full', true, 'mysticwave');
+@include picture('full', false, 'workspace2', false, 'jpeg');
+@include picture('full', true, 'workspace', false, 'jpeg');
+@include picture('full', true, 'wework', false, 'jpeg');
+@include picture('full', true, 'web2', false, 'jpeg');
+@include picture('full', true, 'web', false, 'jpeg');
+@include picture('full', true, 'tron', false, 'jpeg');
+@include picture('full', true, 'space2', false, 'jpeg');
+@include picture('full', true, 'space', false, 'jpeg');
+@include picture('full', true, 'servers', false, 'jpeg');
+@include picture('full', true, 'roomview3', false, 'jpeg');
+@include picture('full', true, 'roomview2', false, 'jpeg');
+@include picture('full', false, 'roomview', false, 'jpeg');
+@include picture('full', true, 'room4', false, 'jpeg');
+@include picture('full', true, 'room3', false, 'jpeg');
+@include picture('full', false, 'room2', false, 'jpeg');
+@include picture('full', false, 'room', false, 'jpeg');
+@include picture('full', false, 'orangetables', false, 'jpeg');
+@include picture('full', true, 'network', false, 'jpeg');
+@include picture('full', true, 'landscape3', false, 'jpeg');
+@include picture('full', true, 'landscape', false, 'jpeg');
+@include picture('full', true, 'grandtables', false, 'jpeg');
+@include picture('full', true, 'gradient9', false, 'jpeg');
+@include picture('full', true, 'gradient8', false, 'jpeg');
+@include picture('full', true, 'gradient7', false, 'jpeg');
+@include picture('full', true, 'gradient6', false, 'jpeg');
+@include picture('full', true, 'gradient5', false, 'jpeg');
+@include picture('full', true, 'gradient4', false, 'jpeg');
+@include picture('full', true, 'gradient3', false, 'jpeg');
+@include picture('full', true, 'gradient2', false, 'jpeg');
+@include picture('full', true, 'gradient1', false, 'jpeg');
+@include picture('full', true, 'goldtables', false, 'jpeg');
+@include picture('full', true, 'glow4', false, 'jpeg');
+@include picture('full', true, 'glow3', false, 'jpeg');
+@include picture('full', true, 'glow2', false, 'jpeg');
+@include picture('full', true, 'glow', false, 'jpeg');
+@include picture('full', true, 'field', false, 'jpeg');
+@include picture('full', true, 'fiber', false, 'jpeg');
+@include picture('full', true, 'emptytable2', false, 'jpeg');
+@include picture('full', true, 'emptytable', false, 'jpeg');
+@include picture('full', false, 'emptyroom', false, 'jpeg');
+@include picture('full', true, 'beach4', false, 'jpeg');
+@include picture('full', true, 'beach3', false, 'jpeg');
+@include picture('full', true, 'beach2', false, 'jpeg');
+@include picture('full', true, 'beach', false, 'jpeg');

@@ -8,10 +8,12 @@
 
 /* variables
  */
-$color1: #2854a1;
-$color2: lighten(saturate($color1, 40%), 20%);
+$color1: #ED8D4D;
+$color2: #EDB10B;
 $white: #fff;
-$grey: #e6e6e6;
+$grey: #e2e2e2;
+$darkGrey: #565656;
+$black: #000;
 
 @import 'utils';
 @import 'website';
@@ -19,7 +21,4 @@ $grey: #e6e6e6;
 @import 'sidebar';
 @import 'help';
 
-@import 'logaster';
-@import 'psprint';
 @import 'popover';
-@import 'gorgiastemplates';

@@ -17,12 +17,8 @@ body {
 /* flex layout
  */
 .card-maker {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  padding-top: 52px;
 }
 
 .app-view,
@@ -45,18 +41,19 @@ body {
 }
 
 .card-editor {
-  margin-left: 20px;
+  margin-left: 0;
   padding-bottom: 0;
-  width: emCalc(500);
+  width: 790px;
 
   font-size: .84em;
+  font-family: 'Open Sans', sans-serif;
 
   @include breakpoint(mama-bear) {
     font-size: .92em;
   }
 
   @include breakpoint(papa-bear) {
-    width: emCalc(594);
+    width: 790px;
     font-size: 1em;
   }
 }
@@ -73,8 +70,14 @@ body {
 /* Themes
 */
 .themes-box {
-  padding-bottom: 0;
-  background-color: darken($white, 10%);
+  margin-top: 115px;
+  padding: 10px 18px 0;
+  background-color: $white;
+  box-shadow: inset 0 -2px 2px darken($white, 10%);
+  border: 1px solid lighten($black, 85%);
+  border-radius: 6px;
+  height: 420px;
+  width: 220px;
 }
 
 .themes-row {
@@ -83,18 +86,18 @@ body {
   .theme-item {
     display: block;
     position: relative;
-    height: emCalc(60);
-    padding: emCalc(6);
-    margin: 0 0 emCalc(4);
-    border-radius: 3px;
-    background-color: $white;
+    height: emCalc(110);
+    padding: emCalc(3);
+    margin: 0;
+    border-radius: 9px;
+    background-color: transparent;
 
     .theme-preview-container {
       overflow: hidden;
       display: block;
       width: 100%;
       height: 100%;
-      border-radius: 1px;
+      border-radius: 6px;
 
       @include linear-gradient(50deg, #888, #000);
     }
@@ -104,22 +107,21 @@ body {
       width: 100%;
       height: 100%;
 
-      opacity: .7;
+      opacity: .95;
     }
 
     &.active {
       background-color: $color2;
-      box-shadow: inset 0 -2px 0 darken($color1, 10%);
 
       .theme-preview {
-        opacity: .9;
+        // opacity: .9;
       }
     }
 
     &:hover {
 
       .theme-preview {
-        opacity: .95;
+        opacity: .9;
       }
 
     }
@@ -133,9 +135,9 @@ body {
 // 3.75 x 2.25 in - full bleed at 96ppi
 .card-container {
   position: relative;
-  width: emCalc(360);
-  height: emCalc(216);
-  margin-bottom: emCalc(20);
+  width: emCalc(480);
+  height: emCalc(270);
+  margin-bottom: emCalc(10);
   border: 1px solid darken($white, 10%);
   box-shadow: 0 2px 1px darken($white, 5%);
 
@@ -150,24 +152,15 @@ body {
   }
 }
 
-// padding 0.25 in for bleed and safe zone (.125 + .125)
 .card-preview {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
 
-  // (350/15) - ratio between bleed and width 3.75/0.25
-  // +
-  // (350/15/0.25) - additional 25% because of font-size .75em
-  padding: emCalc(24 + 6);
+  padding: 0;
 
   font-size: .75em;
-
-  *:not(font) {
-    font-size: 1em;
-  }
-
 }
 
 .card-content {
@@ -190,15 +183,12 @@ body {
   border: 0;
   pointer-events: none;
 
-  /* the card is 1.65 ~ 592px
-  * we want to make the card 1260px for 350dpi, 2.128x in size:
-  * 2.128em + (2.128 * 0.65)
-  */
-  width: 1260px;
-  height: 756px;
+  width: 1920px;
+  height: 1080px;
   font-size: 3.5em;
 
-  .no-picture {
+  .no-picture,
+  .no-export {
     display: none;
   }
 
@@ -225,15 +215,15 @@ body {
 
 .card-container input[type=file] {
   width: 1px;
-  height:1px;
+  height: 1px;
 }
 
 .card-picture {
   position: absolute;
-  top: 4%;
-  left: 4%;
+  bottom: 2%;
+  left: 2%;
 
-  width: 36%;
+  width: 20%;
   color: $color1;
 
   vertical-align: top;
@@ -275,7 +265,6 @@ body {
   }
 
   .no-picture {
-    padding: emCalc(20);
     opacity: .8;
 
     i,
@@ -296,6 +285,8 @@ body {
 
 .card-content {
 
+  font-family: 'Open Sans', sans-serif;
+
   .card-item,
   .card-item p {
     position: relative;
@@ -303,7 +294,6 @@ body {
 
   .card-item {
     position: absolute;
-    left: 52%;
     border: 0;
     padding: 0;
     margin: 0;
@@ -322,7 +312,7 @@ body {
   }
 
   .person {
-    top: 4%;
+    top: 2%;
   }
 
   .fn {
@@ -352,22 +342,52 @@ body {
   .email,
   .url {
     position: absolute;
-
-    width: emCalc(160);
+    width: emCalc(200);
   }
 
-  .details {
-    top: 36%;
-  }
+}
 
-  .email {
-    top: 70%;
-  }
+.watermark-logo {
+  display: block;
+  position: absolute;
+  background: url(../images/watermark.svg) no-repeat;
+  background-size: 100% 100%;
+  width: emCalc(118);
+  height: emCalc(22);
+  right: 15px;
+  bottom: 10px;
+}
 
-  .url {
-    top: 80%;
-  }
+.placeholder-person {
+  display: block;
+  position: absolute;
+  background: url(../images/person-large.svg);
+  width: 430px;
+  height: 436px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -215px;
+}
 
+.placeholder-callbar {
+  display: block;
+  position: absolute;
+  background: url(../images/callbar.svg);
+  width: 56px;
+  height: 54px;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -28px;
+  display: none;
+}
+
+.placeholder-info {
+  position: absolute;
+  width: 100%;
+  font-size: 11px;
+  color: rgba(#7D7D7D, .8);
+  bottom: 10px;
+  text-align: center;
 }
 
 /* Drag
@@ -446,8 +466,8 @@ $color-resize: lighten($color-handle, 20%);
 */
 .download-buttons {
   overflow: hidden;
-  width: 100%;
   margin: 0;
+  padding: 0;
 
   font-size: 1.65em;
 
@@ -455,28 +475,14 @@ $color-resize: lighten($color-handle, 20%);
     display: block;
     overflow: hidden;
     vertical-align: top;
-
     font-size: emCalc(12);
-
-    &.order-btn {
-      width: 60%;
-    }
-
-    &:last-child {
-      width: 38%;
-      margin-left: 2%;
-
-      font-size: .7em;
-    }
-
   }
 
   .button {
     display: block;
-    min-height: emCalc(72);
+    height: 70px;
     margin: 0;
-    border: 0;
-    border-radius: 3px;
+    border-radius: 11px;
 
     font-size: 1em;
     text-align: left;
@@ -497,65 +503,35 @@ $color-resize: lighten($color-handle, 20%);
 
     > li {
       float: left;
-      width: 50%;
+      margin-right: 8px;
     }
 
   }
 }
 
-.button.button-download {
-  position: relative;
-  width: 100%;
-  min-height: auto;
-  padding: 1em 2em;
-  background-color: $grey;
-  box-shadow: none;
-
-  font-size: emCalc(12);
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 2em;
-    display: block;
-    margin-top: -3px;
-    border-width: 5px 5px 0;
-    border-style: solid;
-    border-color: #444 transparent transparent;
-  }
-}
-
-.dropdown-download-files {
-  width: 16.4em;
-  padding: 0;
-  border-radius: 3px;
-  box-shadow: 0 0 4px rgba(0,0,0,.2);
-}
-
-.dropdown-download-files:after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: 1.68em;
-  display: block;
-  border-width: 0 5px 5px;
-  border-style: solid;
-  border-color: transparent transparent #fff;
-}
-
 .button-download-file {
   display: block;
-  width: 100%;
   padding: .6em 1em;
-
+  width: 220px;
   font-size: 1.32em;
+  border: 1px solid #c0c0c0;
 }
 
 .button-download-file:hover {
-  background: #efefef;
+  background: darken($white, 5%);
+  color: $black;
+}
 
-  color: $color2;
+.button-pro {
+  display: block;
+  padding: .6em 1em;
+  font-size: 1.32em;
+  border: 1px solid #B66C3B;
+}
+
+.button-pro:hover {
+  background: darken($color1, 10%);
+  color: $white;
 }
 
 .order-btn .button {
@@ -729,3 +705,4 @@ $color-resize: lighten($color-handle, 20%);
     @include transform(rotate(360deg));
   }
 }
+

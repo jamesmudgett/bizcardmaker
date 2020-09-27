@@ -9,11 +9,11 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
   model.cardPicture = '';
 
   model.imageData = '';
-  model.imageFilename = 'bizcardmaker-com';
+  model.imageFilename = 'callerdojo-com';
   model.imageExt = '.jpg';
 
   model.pdfData = '';
-  model.pdfFilename = 'bizcardmaker-com.pdf';
+  model.pdfFilename = 'callerdojo-com.pdf';
 
   model.loadingCard = false;
 
@@ -23,13 +23,13 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
 
   model.storeDefaults = {
     card: {
-      name: 'John Doe',
+      name: 'Jane Doe',
       position: 'Position',
       organization: 'Organization',
       location: 'City, State',
       phone: '(123) 555-1234',
-      email: 'john.doe@cmail.com',
-      url: 'www.john-doe.com'
+      email: 'jane.doe@cmail.com',
+      url: 'www.jane-doe.com'
     },
     position: {
       picture: {},
@@ -47,7 +47,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
 
   angular.copy(model.storeDefaults, model.store);
 
-  var storedDetails = window.localStorage.getItem('bizcardmaker-store');
+  var storedDetails = window.localStorage.getItem('dojo-store');
 
   if(storedDetails) {
     angular.extend(model.store, angular.fromJson(storedDetails));
@@ -69,7 +69,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
   // save edits to localstorage
   $scope.$watch('model.store', debounce(function(store) {
 
-    window.localStorage.setItem('bizcardmaker-store', angular.toJson(store));
+    window.localStorage.setItem('dojo-store', angular.toJson(store));
 
   }, 500), true);
 
@@ -108,7 +108,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     }
 
 
-    window.localStorage.removeItem('bizcardmaker-store');
+    window.localStorage.removeItem('dojo-store');
 
   };
 
@@ -260,6 +260,8 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     // remove text selection, to hide still-open editors
     window.getSelection().removeAllRanges();
 
+    // $('.no-export').hide();
+
     var $cardClone = document.querySelector('.js-card-container').cloneNode(true);
     $cardClone.classList.add('card-invisible');
 
@@ -314,12 +316,6 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
           // saveAs is global from FileSaver.js
           // FileSaver is included in jsPdf
           saveAs(blob, filename);
-
-          // scroll back to the card
-          // since saveAs scrolls to the top
-          var $cardContainer = $('.card-container');
-          $cardContainer[0].scrollIntoView(true);
-
         },
         'image/jpeg'
       );

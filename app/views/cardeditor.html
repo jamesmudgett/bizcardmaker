@@ -1,11 +1,9 @@
 <h2>
-  Customize virtual call business card
-
-  <button type="button" class="button small muted btn-reset" ng-click="ResetCard()" title="Undo all the styling changes you made. The text and logo will stay the same.">
-    <i class="fa fa-undo"></i>
-    Reset changes
-  </button>
+  Look like a pro on your zoom and team calls.
 </h2>
+<h3>
+  Add personal contact information and your company branding for a more professional presentation.  Virtual backgrounds supported by Zoom, Teams, and Webex.
+</h3>
 
 <div class="card-container js-card-container" ng-class="{ ' state-loading': model.loadingCard }">
   <div class="card-preview {{ model.store.theme }}">
@@ -53,32 +51,34 @@
 
       </div>
 
+      <div class="watermark-logo"></div>
+      <div class="placeholder-person no-export"></div>
+      <!-- <div class="placeholder-callbar no-export"></div> -->
+      <div class="placeholder-info no-export">Example call bar and silhouette excluded from download image.</div>
+
     </div>
 
   </div>
 
 </div>
 
+<button type="button" class="button small muted btn-reset" ng-click="ResetCard()" title="Undo all the styling changes you made. The text and logo will stay the same.">
+  <i class="fa fa-undo"></i>
+  Reset changes
+</button>
+
 <ul class="download-buttons">
   <li>
-
-    <a data-toggle="drop-downloads" class="button muted button-download js-download-dropdown-btn float-right">
-      <i class="fa fa-arrow-circle-o-down"></i>
-      <span>Download as...</span>
-    </a>
-
-    <div id="drop-downloads" class="dropdown-pane bottom dropdown-download-files" data-dropdown data-close-on-click="true">
-      <button type="button" ng-click="DownloadPdf()" class="button-download-file js-track-pdf">
-        <i class="fa fa-file-text"></i>
-        Download as PDF
-      </button>
-
-      <button type="button" ng-click="DownloadPicture()" class="button-download-file js-track-picture">
-        <i class="fa fa-picture-o"></i>
-        Download as JPEG
-      </button>
-    </div>
-
+    <button type="button" ng-click="DownloadPicture()" class="button muted button-download-file js-track-picture">
+      <i class="fa fa-arrow-down"></i>
+      Download
+    </button>
+  </li>
+  <li>
+    <button type="button" ng-click="DownloadPicture()" class="button button-pro js-track-picture">
+      <i class="fa fa-picture-o"></i>
+      Unlock Pro for $2.99
+    </button>
   </li>
 </ul>
 

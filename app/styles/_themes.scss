@@ -22,6 +22,26 @@
   .card-item:hover {
     background-color: rgba($color, .1);
   }
+
+  .watermark-logo {
+    @if $type == 'light' {
+      background: url(../images/watermark-dark.svg) no-repeat;
+    } @else {
+      background: url(../images/watermark-light.svg) no-repeat;
+    }
+  }
+
+  .placeholder-person {
+    @if $type == 'light' {
+      background: url(../images/person-large-dark.svg);
+    } @else {
+      background: url(../images/person-large-light.svg);
+    }
+  }
+
+  .placeholder-info {
+    color: rgba($color, .8);
+  }
 }
 
 /* Mixin to show *New* label
