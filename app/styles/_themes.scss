@@ -20,14 +20,16 @@
   }
 
   .card-item:hover {
-    background-color: rgba($color, .1);
+    background-color: rgba($color2, .3);
   }
 
   .watermark-logo {
     @if $type == 'light' {
       background: url(../images/watermark-dark.svg) no-repeat;
+      background-size: 100% 100%;
     } @else {
       background: url(../images/watermark-light.svg) no-repeat;
+      background-size: 100% 100%;
     }
   }
 

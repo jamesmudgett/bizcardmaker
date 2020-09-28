@@ -118,6 +118,8 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     $location.search('theme', model.store.theme);
   }
 
+  // model.store.pro = true;
+
   $scope.$on('$locationChangeStart', function(){
     var theme = $location.search().theme;
 
@@ -180,8 +182,13 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
       // only if the property is set as inline style
       if(inlineStyleValue && inlineStyleValue.indexOf('em') === -1) {
 
-        // var childValue = parseFloat(style[prop]);
         var childValue = parseFloat(style[prop]);
+        
+        // hack fix -- realign right & bottom positioning
+        if (prop === 'left' || prop === 'top') {
+          childValue *= 1.212;
+        }
+
         var newValue = childValue / parentFontSize;
 
         // recalculate depending on element fontSize
@@ -260,8 +267,6 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     // remove text selection, to hide still-open editors
     window.getSelection().removeAllRanges();
 
-    // $('.no-export').hide();
-
     var $cardClone = document.querySelector('.js-card-container').cloneNode(true);
     $cardClone.classList.add('card-invisible');
 
@@ -334,6 +339,13 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
 
     // init foundation plugins - modal and dropdown
     $(document.querySelector('.card-editor')).foundation();
+
+    if (model.store.pro) {
+      var watermark = document.querySelector('.watermark-logo');
+      if (watermark) {
+        watermark.remove();
+      }
+    }
 
     // hack to prevent automatic scrolling from contenteditable
     var $cardContent = document.querySelector('.card-content');

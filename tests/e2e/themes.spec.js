@@ -31,10 +31,7 @@ describe('Themes', function () {
 
       elem
       .click()
-      .then(element(by.css('.js-download-dropdown-btn')).click)
-      .then(element(by.css('.dropdown-download-files button[ng-click*="DownloadPicture()"]')).click)
-      // close the dropdown
-      .then(element(by.css('.js-download-dropdown-btn')).click);
+      .then(element(by.css('.button-download-file')).click);
     }
   };
 

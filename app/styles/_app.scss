@@ -43,7 +43,7 @@ body {
 .card-editor {
   margin-left: 0;
   padding-bottom: 0;
-  width: 790px;
+  width: emCalc(790);
 
   font-size: .84em;
   font-family: 'Open Sans', sans-serif;
@@ -53,7 +53,7 @@ body {
   }
 
   @include breakpoint(papa-bear) {
-    width: 790px;
+    width: emCalc(790);
     font-size: 1em;
   }
 }
@@ -87,7 +87,7 @@ body {
     display: block;
     position: relative;
     height: emCalc(110);
-    padding: emCalc(3);
+    padding: emCalc(4);
     margin: 0;
     border-radius: 9px;
     background-color: transparent;
@@ -111,7 +111,7 @@ body {
     }
 
     &.active {
-      background-color: $color2;
+      background-color: $color1;
 
       .theme-preview {
         // opacity: .9;
@@ -224,7 +224,7 @@ body {
   left: 2%;
 
   width: 20%;
-  color: $color1;
+  color: $black;
 
   vertical-align: top;
   text-align: center;
@@ -260,7 +260,7 @@ body {
     }
 
     &:hover {
-      background-color: rgba($color1, .1);
+      background-color: rgba($color2, .3);
     }
   }
 
@@ -308,7 +308,7 @@ body {
   }
 
   .card-item:hover {
-    background-color: rgba($color1, .3);
+    background-color: rgba($color2, .3);
   }
 
   .person {
@@ -353,7 +353,7 @@ body {
   background: url(../images/watermark.svg) no-repeat;
   background-size: 100% 100%;
   width: emCalc(118);
-  height: emCalc(22);
+  height: emCalc(17);
   right: 15px;
   bottom: 10px;
 }
@@ -527,6 +527,11 @@ $color-resize: lighten($color-handle, 20%);
   padding: .6em 1em;
   font-size: 1.32em;
   border: 1px solid #B66C3B;
+  
+  i {
+    display: block;
+    font-size: 11px;
+  }
 }
 
 .button-pro:hover {
