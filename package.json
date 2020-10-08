@@ -35,13 +35,12 @@
     "mocha": "3.1.2",
     "phantomjs": "^2.1.7",
     "protractor": "^5.4.3",
-    "sass": "^1.26.2",
+    "sass": "^1.26.11",
     "sw-precache": "^5.2.1"
   },
   "engines": {
     "node": ">=0.8.0"
   },
-  "dependencies": {},
   "scripts": {
     "update": "webdriver-manager update"
   }

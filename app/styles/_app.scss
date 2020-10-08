@@ -12,6 +12,7 @@ html,
 body {
   height: 100%;
   min-height: emCalc(560);
+  min-width: 1248px;
 }
 
 /* flex layout
@@ -34,10 +35,6 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   width: emCalc(120);
-
-  @include breakpoint(mama-bear) {
-    width: emCalc(280);
-  }
 }
 
 .card-editor {
@@ -45,17 +42,8 @@ body {
   padding-bottom: 0;
   width: emCalc(790);
 
-  font-size: .84em;
+  font-size: 1em;
   font-family: 'Open Sans', sans-serif;
-
-  @include breakpoint(mama-bear) {
-    font-size: .92em;
-  }
-
-  @include breakpoint(papa-bear) {
-    width: emCalc(790);
-    font-size: 1em;
-  }
 }
 
 .card-editor > h2 {
@@ -140,16 +128,7 @@ body {
   margin-bottom: emCalc(10);
   border: 1px solid darken($white, 10%);
   box-shadow: 0 2px 1px darken($white, 5%);
-
-  font-size: 1.34em;
-
-  @include breakpoint(mama-bear) {
-    font-size: 1.4em;
-  }
-
-  @include breakpoint(papa-bear) {
-    font-size: 1.65em;
-  }
+  font-size: 1.65em;
 }
 
 .card-preview {
@@ -157,9 +136,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-
   padding: 0;
-
   font-size: .75em;
 }
 
@@ -499,13 +476,9 @@ $color-resize: lighten($color-handle, 20%);
     padding-left: emCalc(44);
   }
 
-  @include breakpoint(baby-bear) {
-
-    > li {
-      float: left;
-      margin-right: 8px;
-    }
-
+  > li {
+    float: left;
+    margin-right: 8px;
   }
 }
 
@@ -641,16 +614,11 @@ $color-resize: lighten($color-handle, 20%);
 
 .region-notice {
   display: block;
-
   color: darken($white, 60%);
   font-size: emCalc(12);
-
-  @include breakpoint(baby-bear) {
-    float: right;
-
-    width: 50%;
-    padding: 0 emCalc(40) 0 emCalc(88);
-  }
+  float: right;
+  width: 50%;
+  padding: 0 emCalc(40) 0 emCalc(88);
 }
 
 /* invisible card generation

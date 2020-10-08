@@ -10,7 +10,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: scroll;
 }
 
@@ -130,7 +130,6 @@ label {
   margin: 0.2em 0;
   background: #ccc;
   padding: 0.2em 0;
-
   color: #000;
 }
 
@@ -390,4 +389,15 @@ dl dd {
 
 .top-bar, .top-bar ul {
   background-color: transparent;
+}
+
+/* safari warning
+ */
+
+ .warning-safari {
+  display: none;
+}
+
+.warning-safari-show {
+  display: block;
 }
