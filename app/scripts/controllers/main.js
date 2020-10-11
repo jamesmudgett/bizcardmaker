@@ -328,6 +328,35 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     });
   };
 
+  $scope.GetPro = function() {
+    stripe
+      .redirectToCheckout({
+        lineItems: [
+          {price: 'price_1HavheBQE9LzLC2d0meqmmzo', quantity: 1},
+        ],
+        mode: 'payment',
+        successUrl: 'https://virtualbackgroundpro.com/#/?payment=success',
+        cancelUrl: 'https://virtualbackgroundpro.com/#/?payment=canceled',
+      })
+      .then(function(result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+        if (!result.error.message) {
+          model.store.pro = true;
+          var watermark = document.querySelector('.watermark-logo');
+          if (watermark) {
+            watermark.remove();
+          }
+
+          var probutton = document.querySelector('.button-pro');
+          if (probutton) {
+            probutton.remove();
+          }
+        }
+      });
+  };
+
   var allTemplates = 1;
   var loadedTemplates = 0;
   $scope.$on('$includeContentLoaded', function() {

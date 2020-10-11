@@ -1,16 +1,16 @@
  {
 	"manifest_version": 2,
-	"name": "Business Card Maker",
-	"description": "Easily create your own FREE business cards in seconds, using high quality professional designs.",
-	"version": "1.0.2",
+	"name": "CallerDojo",
+	"description": "Look like a pro on your zoom and team calls. Free virtual background maker for professionals.",
+	"version": "1.0",
 	"icons": {
-		"16": "bizcardmaker-icon-16.png",
-		"48": "bizcardmaker-icon-48.png",
-		"128": "bizcardmaker-icon-128.png"
+		"16": "callerdojo-icon-16.png",
+		"48": "callerdojo-icon-48.png",
+		"128": "callerdojo-icon-128.png"
 	},
 	"app": {
 		"launch": {
-			"web_url": "http://www.bizcardmaker.com/?utm_source=chromewebstore&utm_medium=app&utm_campaign=chromewebstore"
+			"web_url": "https://callerdojo.com/?utm_source=chromewebstore&utm_medium=app&utm_campaign=chromewebstore"
 		}
 	},
 	"permissions": []

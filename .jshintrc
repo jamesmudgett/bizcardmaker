@@ -31,6 +31,8 @@
     "app": true,
     "env": true,
     "apiUrl": true,
-    "printchompUrl": true
+    "printchompUrl": true,
+    "stripe": true,
+    "elements": true
   }
 }

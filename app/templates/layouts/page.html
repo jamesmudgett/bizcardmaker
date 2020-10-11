@@ -12,7 +12,7 @@
   </title>
   <link rel="icon" type="image/png" href="/images/callerdojo-icon.png">
 
-  <meta name="description" content="Free virtual backgrounds for profesionals.">
+  <meta name="description" content="Free virtual backgrounds for professionals.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2854a1">
   <link rel="canonical" href="https://www.callerdojo.com/{{relative 'public/' page.dest}}">
@@ -27,23 +27,27 @@
 
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="Look like a pro on your zoom and team calls.">
-  <meta itemprop="description" content="Free virtual backgrounds for profesionals.">
+  <meta itemprop="description" content="Free virtual background maker for professionals.">
   <meta itemprop="image" content="https://www.callerdojo.com/images/banner-social.png">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://www.callerdojo.com">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Look like a pro on your zoom and team calls.">
-  <meta property="og:description" content="Free virtual backgrounds for profesionals.">
+  <meta property="og:description" content="Free virtual background maker for professionals.">
   <meta property="og:image" content="https://www.callerdojo.com/images/banner-social.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Look like a pro on your zoom and team calls.">
-  <meta name="twitter:description" content="Free virtual backgrounds for profesionals.">
+  <meta name="twitter:description" content="Free virtual background maker for professionals.">
   <meta name="twitter:image" content="https://www.callerdojo.com/images/banner-social.png">
 
   <script src="https://js.stripe.com/v3/"></script>
+  <script type="text/javascript">
+    const stripe   = Stripe('pk_live_51HRL9HBQE9LzLC2dJTKV3vXb5qBHL5z9lb4uoRCanCwBTSB1f06qLQNzu0whyBKR60QjppEcLiGzOybX04t5DFeh00Q7UHtrw3');
+    const elements = stripe.elements();
+  </script>
 </head>
 <body>
 
@@ -57,20 +61,6 @@
         <a href="/">
           <img src="/images/callerdojo-logo.svg" alt="CallerDojo Logo" width="194" height="44">
         </a>
-    </div>
-
-    <div class="top-bar-left">
-      {{#if title}}
-        {{#if page.posted }}
-          <h2>
-            Blog
-          </h2>
-        {{ else }}
-          <a href="/" class="button radius secondary left btn-start js-guide-btn">
-            Get started
-          </a>
-        {{/if}}
-      {{/if}}
     </div>
 
     <div class="top-bar-right show-for-medium">
