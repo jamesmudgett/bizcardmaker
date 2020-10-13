@@ -1,5 +1,5 @@
 <h1>
-  <a href="https://www.callerdojo.com">
+  <a href="https://callerdojo.com">
     CallerDojo
   </a>
 </h1>
