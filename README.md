@@ -1,11 +1,10 @@
 <h1>
-  <a href="https://www.bizcardmaker.com">
-    <img src="/artwork/square-icon.png?raw=true" width="30">
-    Business Card Maker
+  <a href="https://callerdojo.com">
+    CallerDojo
   </a>
 </h1>
 
-> Easily create business cards in the browser, using high quality professional designs.
+> Easily create virtual backgrounds in the browser.
 
 Business Card Maker is mainly built with [AngularJS](https://angularjs.org/) and [Foundation](http://foundation.zurb.com/).
 
