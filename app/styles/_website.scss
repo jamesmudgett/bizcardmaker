@@ -275,11 +275,15 @@ article h2 {
   font-size: 2.25em;
 }
 
+.sharethis-inline-share-buttons {
+  float: right;
+}
+
 /* footer
  */
 
 .footer {
-  padding: emCalc(28) 0 0;
+  padding: 15px 0 0;
   border-top: 1px solid #efefef;
 }
 
