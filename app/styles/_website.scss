@@ -39,6 +39,13 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  font-weight: normal;
+  font-size: emCalc(16);
+  letter-spacing: emCalc(-0.1);
+  color: lighten($black, 20%);
+}
+
 a {
   color: $color1;
 
@@ -190,7 +197,7 @@ section {
 article h1 {
   margin: 0 0 emCalc(24);
 
-  color: desaturate($color1, 60%);
+  color: black;
   font-size: emCalc(24);
   line-height: 1em;
   letter-spacing: emCalc(-0.5);
@@ -355,7 +362,7 @@ article h2 {
   border-top: 1px solid #efefef;
 
   h4 {
-    font-size: emCalc(16);
+    font-size: emCalc(12);
     font-weight: bold;
   }
 

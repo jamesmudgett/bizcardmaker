@@ -33,6 +33,8 @@
     "apiUrl": true,
     "printchompUrl": true,
     "stripe": true,
-    "elements": true
+    "elements": true,
+    "alert": false,
+    "_paq": true
   }
 }
