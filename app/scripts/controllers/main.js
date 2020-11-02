@@ -309,7 +309,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
 
   $scope.DownloadPicture = function() {
     var theme = window.util.hash('theme') || 'default';
-    _paq.push(['trackEvent', 'download', theme]);
+    ga.apply(null, ['trackEvent', 'download', theme]);
 
     $scope.generatePicture()
     .then(function(canvas) {
@@ -332,7 +332,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
 
   $scope.GetPro = function() {
     var theme = window.util.hash('theme') || 'default';
-    _paq.push(['trackEvent', 'clicked pro', theme]);
+    ga.apply(null, ['trackEvent', 'clicked pro', theme]);
 
     stripe
       .redirectToCheckout({
@@ -402,7 +402,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
     if (window.util.hash('payment')) {
       var theme = window.util.hash('theme') || 'default';
 
-      _paq.push(['trackEvent', 'pro', theme]);
+      ga.apply(null, ['trackEvent', 'pro', theme]);
 
       model.store.pro = true;
       var watermark = document.querySelector('.watermark-logo');
