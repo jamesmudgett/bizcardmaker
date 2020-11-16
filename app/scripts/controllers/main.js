@@ -348,6 +348,7 @@ function($rootScope, $scope, $routeParams, $location, $timeout, $q) {
       });
   };
 
+
   var allTemplates = 1;
   var loadedTemplates = 0;
   $scope.$on('$includeContentLoaded', function() {

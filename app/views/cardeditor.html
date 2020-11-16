@@ -4,7 +4,6 @@
 <h3>
   Add personal contact information and your company branding for a more professional presentation.  Virtual backgrounds supported by Zoom, Teams, and Webex.
 </h3>
-
 <div class="card-container js-card-container" ng-class="{ ' state-loading': model.loadingCard }">
   <div class="card-preview {{ model.store.theme }}">
 
@@ -57,11 +56,8 @@
       <div class="placeholder-info no-export">Example call bar and silhouette excluded from download image.</div>
 
     </div>
-
   </div>
-
 </div>
-
 <button type="button" class="button small muted btn-reset" ng-click="ResetCard()" title="Undo all the styling changes you made. The text and logo will stay the same.">
   <i class="fa fa-undo"></i>
   Reset changes
@@ -76,10 +72,48 @@
     </button>
   </li>
   <li>
+    <!-- <a class="twitter-button twitter-pro twitter-hashtags-button" id="buttons" href="https://twitter.com/intent/tweet" data-text="Welcome to CallerDojo"> -->
+      <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet"
+  data-size="large"
+  data-text="Look like a pro on your zoom and team calls."
+  data-url="www.callerdojo.com"
+  data-hashtags="zoom,virtual-call"
+  data-via="callerdojo"
+  data-related="twitterapi,twitter">
+Tweet
+</a><br />
+<i>Tweet to unlock PRO</i>
+  </li>
+  <li>
     <button type="button" ng-click="DownloadPicture()" class="button muted button-download-file js-track-picture">
       <i class="fa fa-arrow-down"></i>
       Download
     </button>
   </li>
-
 </ul>
+
+<script>
+  function reward_user( event ) {
+    if ( event ) {
+        var watermark = document.querySelector('.watermark-logo');
+        if (watermark) {
+          watermark.remove();
+        }
+        var probutton = document.querySelector('.twitter-pro');
+        if (probutton) {
+          probutton.remove();
+        }
+    }
+}
+window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+ 
+twttr.ready(function (twttr) {
+    twttr.events.bind('tweet', reward_user);
+});
+</script>

@@ -466,6 +466,18 @@ $color-resize: lighten($color-handle, 20%);
     vertical-align: top;
   }
 
+  .twitter-button {
+    display: block;
+    height: 70px;
+    margin: 0;
+    border-radius: 11px;
+
+    font-size: 1em;
+    text-align: left;
+    vertical-align: top;
+    background-color: #1DA1F2;
+  }
+
   .fa {
     width: emCalc(20);
   }
@@ -485,7 +497,7 @@ $color-resize: lighten($color-handle, 20%);
 .button-download-file {
   display: block;
   padding: .6em 1em;
-  width: 220px;
+  width: 190px;
   font-size: 1.32em;
   border: 1px solid #c0c0c0;
 }
@@ -505,6 +517,21 @@ $color-resize: lighten($color-handle, 20%);
     display: block;
     font-size: 11px;
   }
+}
+
+.twitter-pro {
+  display: block;
+  padding: .6em 1em;
+  font-size: 1.32em;
+  border: 1px solid #479CAB;
+  color: white;
+    i {
+      display: block;
+      font-size: 11px;
+    }
+    a {
+      text-decoration: none;
+    }
 }
 
 .button-pro:hover {
@@ -630,6 +657,7 @@ $color-resize: lighten($color-handle, 20%);
   top: 100%;
   pointer-events: none;
 }
+
 
 /* card loader
 */
